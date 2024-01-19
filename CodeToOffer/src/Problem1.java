@@ -7,7 +7,7 @@ public class Problem1 {
     public static void main(String[] args) {
         int[] nums = { 3, 3 };
 
-        System.out.println(Arrays.toString(twoSumSol(nums, 9)));
+        System.out.println(Arrays.toString(optimizedTwoSum(nums, 6)));
     }
 
     /**
