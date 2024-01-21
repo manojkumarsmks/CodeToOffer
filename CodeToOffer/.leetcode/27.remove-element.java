@@ -22,22 +22,20 @@ class Solution {
      *     We run into a problem when there are 2 or more consequtive "vals".
      *     This approach is O(n) time complexity, but O(n) in time and bunch of
      *     reperated work
+     * 
+     *     This approach removes an loop, still same effeicency little better code
      */
     public static int removeElement(int[] nums, int val) {
 
+        int[] temp = new int[nums.length];
         int valCounter = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == val) {
-                valCounter++;
-            }
-        }
-
-        int[] temp = new int[nums.length - valCounter];
 
         for (int i = 0, j = 0; i < nums.length; i++) {
             if (nums[i] != val) {
                 temp[j] = nums[i];
                 j++;
+            } else {
+                valCounter++;
             }
         }
 
