@@ -24,26 +24,22 @@ class Solution {
      *     reperated work
      * 
      *     This approach removes an loop, still same effeicency little better code
+     * 
+     *     The latest solution is a very elegant solution. Learned it.
+     *     Technique is - updating while iterating need two pointers, one to iterate
+     *     while one to update.
      */
     public static int removeElement(int[] nums, int val) {
 
-        int[] temp = new int[nums.length];
-        int valCounter = 0;
+        int pointer = 0;
 
-        for (int i = 0, j = 0; i < nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val) {
-                temp[j] = nums[i];
-                j++;
-            } else {
-                valCounter++;
+                nums[pointer++] = nums[i];
             }
         }
 
-        for (int i = 0; i < temp.length; i++) {
-            nums[i] = temp[i];
-        }
-
-        return nums.length - valCounter;
+        return pointer;
     }
 }
 // @lc code=end
