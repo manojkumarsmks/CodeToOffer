@@ -6,9 +6,16 @@
 
 // @lc code=start
 class Solution {
-    // The code is implementing the `strStr` function, which is used to find the
-    // index of the first occurrence of a substring
-    // (`needle`) within a larger string (`haystack`).
+    /*
+     * The code is implementing the `strStr` function, which is used to find the
+     * index of the first occurrence of a substring
+     * (`needle`) within a larger string (`haystack`).
+     * 
+     * Basic solution, using of subSequence() might not be very efficient?!
+     * time complexity - O(n^2)
+     * 
+     */
+
     public int strStr(String haystack, String needle) {
 
         if (haystack.length() < needle.length())
