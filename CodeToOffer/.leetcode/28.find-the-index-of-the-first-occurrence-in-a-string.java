@@ -14,25 +14,18 @@ class Solution {
      * Basic solution, using of subSequence() might not be very efficient?!
      * time complexity - O(n^2)
      * 
+     * the latest one is a better and elegant solution
      */
 
     public int strStr(String haystack, String needle) {
 
-        if (haystack.length() < needle.length())
-            return -1;
+        int m = haystack.length();
+        int n = needle.length();
 
-        for (int i = 0; i < haystack.toCharArray().length; i++) {
-
-            if (haystack.charAt(i) == needle.charAt(0)) {
-
-                if (i + needle.length() > haystack.length()) {
-                    return -1;
-                }
-                if (haystack.subSequence(i, i + needle.length()).equals(needle)) {
-                    return i;
-                }
+        for (int i = 0; i < m - n + 1; i++) {
+            if (haystack.substring(i, i + n).equals(needle)) {
+                return i;
             }
-
         }
         return -1;
 
