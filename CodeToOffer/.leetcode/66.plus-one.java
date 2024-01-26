@@ -6,6 +6,19 @@
 
 // @lc code=start
 class Solution {
+    /**
+     * The function takes an array of digits representing a non-negative integer and returns an array representing the
+     * integer incremented by one.
+     * 
+     * @param digits An array of integers representing a number. Each element in the array represents a digit of the
+     * number, with the least significant digit at index 0.
+     * @return The method is returning an array of integers.
+     * 
+     * 
+     * @mk - this is definitely not the elegant code I am proud of
+     * Time Complexity - O(n)
+     * Space Complexity - 
+     */
     public int[] plusOne(int[] digits) {
 
         int carry = 0;
