@@ -5,6 +5,9 @@
  */
 
 // @lc code=start
+
+import java.util.HashMap;
+
 class Solution {
     /**
      * The function checks if two strings are anagrams by comparing the frequency of
@@ -17,21 +20,23 @@ class Solution {
      * @return The method is returning a boolean value, either true or false.
      * 
      * @mk - Using Array as an hashmap, index as a key and value as the value
+     * 
+     *     The second solution is basically using hashmap
      */
     public boolean isAnagram(String s, String t) {
 
-        int[] array = new int[26];
+        HashMap<Character, Integer> map = new HashMap<>();
 
         for (char c : s.toCharArray()) {
-            array[c - 'a']++;
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
         for (char c : t.toCharArray()) {
-            array[c - 'a']--;
+            map.put(c, map.getOrDefault(c, 0) - 1);
         }
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != 0) {
+        for (int values : map.values()) {
+            if (values != 0) {
                 return false;
             }
         }
